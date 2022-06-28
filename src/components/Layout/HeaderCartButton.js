@@ -1,11 +1,14 @@
 import React from "react";
+import CartIcon from "../Cart/CartIcon";
 
 const HeaderCartButton = (props) => {
   return (
     <button>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span>
+        <CartIcon />
+      </span>
+      <span>Your Cart</span>
+      <span>3</span>
     </button>
   );
 };
