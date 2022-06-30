@@ -11,7 +11,7 @@ const MealItem = ({ name, description, price }) => {
         <div className={classes.price}>{`$${price.toFixed(2)}`}</div>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm name={name} />
       </div>
     </li>
   );
