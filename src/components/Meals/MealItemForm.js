@@ -2,8 +2,12 @@ import React from "react";
 import classes from "./MealItemForm.module.css";
 import Input from "../UI/Input";
 const MealItemForm = ({ name }) => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className={classes.form}>
+    <form className={classes.form} obSubmit={submitHandler}>
       <Input
         label="Amount"
         input={{
