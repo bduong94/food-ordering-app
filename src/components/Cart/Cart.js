@@ -11,7 +11,9 @@ const Cart = ({ onCloseCart }) => {
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {};
-  const cartItemAddHandler = (id) => {};
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
@@ -21,8 +23,8 @@ const Cart = ({ onCloseCart }) => {
           name={item.name}
           price={item.price}
           amount={item.amount}
-          onAdd={cartItemAddHandler.bind(null, item.id)}
-          onRemove={cartItemRemoveHandler(null, item)}
+          onAdd={cartItemAddHandler.bind(null, item)}
+          onRemove={cartItemRemoveHandler(null, item.id)}
         />
       ))}
     </ul>
