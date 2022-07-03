@@ -31,11 +31,12 @@ const CartProvider = (props) => {
   const removeItemFromCartHandler = (id) => {};
 
   const cartContext = {
-    items: [],
-    totalAmount: 0,
+    items: cartState.items,
+    totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
+
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
